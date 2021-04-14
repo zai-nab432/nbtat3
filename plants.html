@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="plants.css">
+
+
+</head>
+<body>
+<img src="logo.png" width="117" height="118" alt="logo"/>
+	<h2 class="header">موقع لعرض نباتات</h2>
+<div class="topnav" id="myTopnav" align="center">
+<span style="display: none;"></span>
+  <a href="help center.html">مركز المساعدة</a>
+   <a href="accessories.html"> من نحن؟</a>
+   <a href="show of the week.html">عرض الاسبوع</a>
+   <a class="active" href="plants.html">نباتات داخلية</a>
+   <a  href="index.html">الصفحة الرئيسية</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+	<h2 class="br" style="text-align:center">أكثر النباتات مبيعًا</h2>
+
+<div class="container" >
+  <div class="mySlides" align="center">
+    <div class="numbertext">1 / 6</div>
+    <img src="imges/agtdvh.jpg" style="width:70%" height="500" alt="شيق">
+  </div>
+
+  <div class="mySlides" align="center">
+    <div class="numbertext">2 / 6</div>
+    <img src="imges/زاميا.jpg" style="width:70%" height="500" alt="زاميا">
+  </div>
+
+  <div class="mySlides" align="center">
+    <div class="numbertext">3 / 6</div>
+    <img src="imges/الفيكس.jpg" style="width:70%" height="500" alt="الفيكس">
+  </div>
+    
+  <div class="mySlides" align="center">
+    <div class="numbertext">4 / 6</div>
+    <img src="imges/نبتة الببروميا.png" style="width:70%" height="500" alt="البيروميا">
+  </div>
+
+  <div class="mySlides" align="center">
+    <div class="numbertext">5 / 6</div>
+    <img src="imges/نبتة الزاميا.png" style="width:70%" height="500" alt="الزاميا">
+  </div>
+    
+  <div class="mySlides" align="center">
+    <div class="numbertext">6 / 6</div>
+    <img src="imges/نبتة الدافنباخيا.png" style="width:70%" height="500" alt="دافنباخيا">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <h2 id="caption"></h2>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" alt="شفليرا" src="imges/agtdvh.jpg"  style="width:90%;" onclick="currentSlide(1)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="imges/زاميا.jpg" style="width:90%" onclick="currentSlide(2)" alt="الزاميا">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="imges/الفيكس.jpg" style="width:90%" onclick="currentSlide(3)" alt="الفيكس">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="imges/نبتة الببروميا.png" style="width:90%" onclick="currentSlide(4)" alt="البيروميا">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="imges/نبتة الزاميا.png" style="width:90%" onclick="currentSlide(5)" alt="الزاميا">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="imges/صبار جلد النمر.png" style="width:90%" onclick="currentSlide(6)" alt="جلد النمر">
+    </div>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>	
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+	
+<footer class="footer" style="text-align: center"> 2021 جميع حقوق الموقع محفوظة </footer>
+</body>
+</html>
